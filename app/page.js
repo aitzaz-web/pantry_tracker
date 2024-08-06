@@ -1,9 +1,7 @@
-// app/page.js
 'use client';
 
-import { Box, Typography, Button, Container } from '@mui/material';
+import { Box, Typography, Button } from '@mui/material';
 import { useRouter } from 'next/navigation';
-
 
 export default function HomePage() {
   const router = useRouter();
@@ -29,55 +27,52 @@ export default function HomePage() {
       }}
     >
       <Typography variant="h2" sx={{
-      marginBottom: 2,
-      fontWeight: 'bold',
-      color: 'darkblue',
-      textAlign: 'center',
-      textTransform: 'uppercase',
-      letterSpacing: 1.5
-    }}>
-      Welcome to Your Personal Pantry Manager
-    </Typography>
-    <Typography variant="body1" sx={{
-      marginBottom: 4,
-      color: 'darkblue',
-      textAlign: 'center',
-      fontSize: '1.8rem',
-      fontWeight: 300
-    }}>
-      Manage Your Inventory efficiently
-    </Typography>
-
-    <Typography variant="body1" sx={{
-      marginBottom: 4,
-      color: 'darkblue',
-      textAlign: 'center',
-      fontSize: '1.3rem',
-      fontWeight: 300
-      
-    }}>
-      Comes with Unique Features
-      <Typography>
-        AI Reciple Creator
-        <br></br>
-        Image Classifier
-        <br></br>
-        Custom Search Bar
+        marginBottom: 2,
+        fontWeight: 'bold',
+        color: 'darkblue',
+        textTransform: 'uppercase',
+        letterSpacing: 1.5
+      }}>
+        Welcome to Your Personal Pantry Manager
       </Typography>
-    </Typography>
 
-    
-      
-    
+      <Typography variant="body1" sx={{
+        marginBottom: 4,
+        color: 'darkblue',
+        fontSize: '1.8rem',
+        fontWeight: 300
+      }}>
+        Manage Your Inventory efficiently
+      </Typography>
+
+      <Typography variant="body1" sx={{
+        marginBottom: 4,
+        color: 'darkblue',
+        fontSize: '1.3rem',
+        fontWeight: 300
+      }}>
+        Comes with Unique Features
+      </Typography>
+
+      <Box sx={{ textAlign: 'center' }}>
+        <Typography variant="body1" sx={{ color: 'darkblue', fontSize: '1rem', fontWeight: 300 }}>
+          AI Reciple Creator
+          <br />
+          Image Classifier
+          <br />
+          Custom Search Bar
+        </Typography>
+      </Box>
+
       <Button
         variant="contained"
         sx={{
-            color: 'white',
-            backgroundColor: 'blue', // Green color for the button
-            '&:hover': {
-              backgroundColor: 'darkblue', // Darker green for hover effect
-            },
-          }}
+          color: 'white',
+          backgroundColor: 'blue', // Blue color for the button
+          '&:hover': {
+            backgroundColor: 'darkblue', // Darker blue for hover effect
+          },
+        }}
         onClick={handleNavigate}
       >
         Get Started
