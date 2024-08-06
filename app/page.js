@@ -1,95 +1,87 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+// app/page.js
+'use client';
 
-export default function Home() {
+import { Box, Typography, Button, Container } from '@mui/material';
+import { useRouter } from 'next/navigation';
+
+
+export default function HomePage() {
+  const router = useRouter();
+
+  const handleNavigate = () => {
+    router.push('/login'); // Navigate to the auth page for login/signup
+  };
+
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>app/page.js</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
+    <Box
+      sx={{
+        width: '100%',
+        backgroundSize: 'cover',
+        backgroundColor: 'lightblue',
+        backgroundPosition: 'center',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        minHeight: '100vh',
+        padding: 2,
+        textAlign: 'center',
+      }}
+    >
+      <Typography variant="h2" sx={{
+      marginBottom: 2,
+      fontWeight: 'bold',
+      color: 'darkblue',
+      textAlign: 'center',
+      textTransform: 'uppercase',
+      letterSpacing: 1.5
+    }}>
+      Welcome to Your Personal Pantry Manager
+    </Typography>
+    <Typography variant="body1" sx={{
+      marginBottom: 4,
+      color: 'darkblue',
+      textAlign: 'center',
+      fontSize: '1.8rem',
+      fontWeight: 300
+    }}>
+      Manage Your Inventory efficiently
+    </Typography>
 
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+    <Typography variant="body1" sx={{
+      marginBottom: 4,
+      color: 'darkblue',
+      textAlign: 'center',
+      fontSize: '1.3rem',
+      fontWeight: 300
+      
+    }}>
+      Comes with Unique Features
+      <Typography>
+        AI Reciple Creator
+        <br></br>
+        Image Classifier
+        <br></br>
+        Custom Search Bar
+      </Typography>
+    </Typography>
 
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+    
+      
+    
+      <Button
+        variant="contained"
+        sx={{
+            color: 'white',
+            backgroundColor: 'blue', // Green color for the button
+            '&:hover': {
+              backgroundColor: 'darkblue', // Darker green for hover effect
+            },
+          }}
+        onClick={handleNavigate}
+      >
+        Get Started
+      </Button>
+    </Box>
   );
 }
